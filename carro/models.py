@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class carro (models.model):
+class carro (models.Model):
     marca = models.CharField(max_length=20)
     modelo = models.CharField(max_length=50)
     precio = models.IntegerField(null=False)

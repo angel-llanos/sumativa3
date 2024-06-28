@@ -1,0 +1,20 @@
+.body-bg {
+    background-image: url(../image/fondo.jpg);
+    background-size: cover;
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* página de los autos */
+.autos {
+    flex-direction: row;
+}
+
+.ficha-auto {
+    display:flex;
+    justify-content:center;
+    margin:0 auto;
+    margin-top:1rem;
+    max-width:700px;
+  }
