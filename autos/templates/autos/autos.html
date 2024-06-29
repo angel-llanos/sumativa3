@@ -39,6 +39,20 @@
             </div>
         </nav>
 
+
+        <div style="float:right;" class="mt-2">
+            {% if request.user.is_authenticated %}
+                {% include "carro/carrito.html" %}
+            {% else %}
+                <div class="alert alert-danger text-center">Login para ver carro</div>
+            {% endif %}
+        </div><!-- Fin div carro de compra-->
+        <div class="row">
+
+
+
+
+
         <div class="row">
             {% for auto in autos %}
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 d-flex p-5 justify-content-center display-block">
@@ -48,7 +62,13 @@
                         <h5 class="card-title">{{auto.marca}} {{auto.modelo}}</h5>
                         <p class="card-text">Año: {{auto.anio}}</p>
                         <p class="card-text">Precio: ${{auto.precio}}</p>
-                        <a href="#" class="btn btn-primary">Ver más</a>
+
+                        <div class="row"> 
+                            <a href="#" class="btn btn-primary">Ver más</a>
+                        
+                            <a href="#" class="btn btn-danger">Agregar</a>
+                        </div>
+                    
                     </div>
                 </div>
             </div>

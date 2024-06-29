@@ -1,9 +1,12 @@
 from django.shortcuts import render
-from .models import Auto
+from .models import Autos
 
 # Create your views here.
 
 def autos(request):
-    autos = Auto.objects.all()
-    context = {"autos" : autos}
-    return render(request, "autos/autos.html", context)
+    autos = Autos.objects.all()
+    return render(request, "autos/autos.html", {
+
+        "autos":autos
+
+    })
