@@ -1,5 +1,4 @@
 from django.shortcuts import render , redirect
-
 from .carro import Carro
 from autos.models import Autos
 #create your views here
