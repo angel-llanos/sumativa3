@@ -1,0 +1,28 @@
+/* fondo de la página */
+.body-bg {
+    background-image: url(../image/fondo.jpg);
+    background-size: cover;
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* logo del navbar */
+.mini {
+    width: 40px;
+    height: 60px;
+}
+
+/* carrusel */
+.carrusel {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}

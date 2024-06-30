@@ -1,3 +1,4 @@
+/* fondo de la página */
 .body-bg {
     background-image: url(../image/fondo.jpg);
     background-size: cover;
@@ -6,11 +7,18 @@
     background-attachment: fixed;
 }
 
+/* logo del navbar */
+.mini {
+    width: 40px;
+    height: 60px;
+}
+
 /* página de los autos */
 .autos {
     flex-direction: row;
 }
 
+/* cards de los autos */
 .ficha-auto {
     display:flex;
     justify-content:center;
