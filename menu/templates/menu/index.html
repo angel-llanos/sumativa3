@@ -34,6 +34,25 @@
               <a class="nav-link" href="{% url 'autos' %}">Productos</a>
             </li>
           </ul>
+
+          {% if request.user.is_authenticated %}
+          <p class="me-3 mt-2 text-white fs-6">¡Bienvenido, {{ user.username | upper }}!</p>
+          <div>
+            <a class="mt-1" href="{% url 'exit' %}">
+              <button type="button" class="btn btn-outline-light" style="margin-right: 10px">Salir</button>
+            </a>
+          </div>
+          {% else %}
+          <div>
+            <a class="mt-1" href="{% url 'login' %}">
+              <button type="button" class="btn btn-outline-light" style="margin-right: 10px">Acceder</button>
+            </a>
+            <a class="mt-1" href="{% url 'register' %}">
+              <button type="button" class="btn btn-outline-light" style="margin-right: 10px">Regístrate</button>
+            </a>
+          </div>
+          {% endif %}
+
         </div>
       </div>
     </nav>

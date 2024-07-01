@@ -20,9 +20,32 @@
 
 /* cards de los autos */
 .ficha-auto {
-    display:flex;
-    justify-content:center;
-    margin:0 auto;
-    margin-top:1rem;
-    max-width:700px;
-  }
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 1rem;
+    max-width: 700px;
+}
+
+/* pagina de login */
+.formulario {
+    width: 400px;
+    height: 255px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+/* página de registro */
+.formulario-registro {
+    width: 450px;
+    height: 600px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+
+.form-text {
+    color: orange;
+}

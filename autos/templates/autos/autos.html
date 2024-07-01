@@ -35,6 +35,28 @@
                             <a class="nav-link active" href="{% url 'autos' %}">Productos</a>
                         </li>
                     </ul>
+
+                    {% if request.user.is_authenticated %}
+                    <p class="me-3 mt-2 text-white fs-6">¡Bienvenido, {{ user.username | upper }}!</p>
+                    <div>
+                        <a class="mt-1" href="{% url 'exit' %}">
+                            <button type="button" class="btn btn-outline-light"
+                                style="margin-right: 10px">Salir</button>
+                        </a>
+                    </div>
+                    {% else %}
+                    <div>
+                        <a class="mt-1" href="{% url 'login' %}">
+                            <button type="button" class="btn btn-outline-light"
+                                style="margin-right: 10px">Acceder</button>
+                        </a>
+                        <a class="mt-1" href="{% url 'register' %}">
+                            <button type="button" class="btn btn-outline-light"
+                                style="margin-right: 10px">Regístrate</button>
+                        </a>
+                    </div>
+                    {% endif %}
+
                 </div>
             </div>
         </nav>
@@ -42,13 +64,15 @@
 
         <div style="float: right;" class="me-5">
             {% if request.user.is_authenticated %}
-                {% include "carro/carrito.html" %}
+            {% include "carro/carrito.html" %}
             {% else %}
-                <div class="alert alert-danger text-center">Login para ver carro</div>
+            <div class="alert alert-danger text-center">
+                <a href="{% url 'login' %}">Login</a> para ver carro
+            </div>
             {% endif %}
         </div><!-- Fin div carro de compra-->
 
-        
+
         <div class="row">
             {% for auto in autos %}
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 d-flex p-5 justify-content-center display-block">
@@ -57,14 +81,14 @@
                     <div class="card-body">
                         <h5 class="card-title">{{auto.marca}} {{auto.modelo}}</h5>
                         <p class="card-text">Año: {{auto.anio}}</p>
-                        <p class="card-text">Precio: ${{auto.precio}}</p>
+                        <p class="card-text text-center fs-4">${{auto.precio}}</p>
 
-                        <div class="row"> 
+                        <div class="row">
                             <a href="#" class="btn btn-primary">Ver más</a>
-                        
+
                             <a href="#" class="btn btn-danger">Agregar</a>
                         </div>
-                    
+
                     </div>
                 </div>
             </div>
