@@ -57,31 +57,19 @@
                     </div>
                 </div>
             </nav>
-    
-    
-            <div style="float: right;" class="me-5">
-                {% if request.user.is_authenticated %}
-                {% include "carro/carrito.html" %}
-                {% else %}
-                <div class="alert alert-danger text-center">
-                    <a href="{% url 'login' %}">Login</a> para ver carro
-                </div>
-                {% endif %}
-            </div><!-- Fin div carro de compra-->
 
             <!--Autos-->
             <div class="container">
-                <div class="row mt-2 mb-2">
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                            <img src="{{autos.imagen}}" alt="{{autos.marca}}">
+                <div class="row mt-2 mb-2 text-white">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <img src="{{autos.imagen}}" alt="{{autos.marca}}" style="width: 400px">
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <h5 class="titlePage">{{autos.marca}}</h5>
                             <p class="subTitlePage">Modelo: {{autos.modelo}}</p>
                             <p class="subTitlePage2">Descripcion: {{autos.descripcion}}</p>
                             <p class="subTitlePage3">Año: {{autos.anio}}</p>
-                            <p class="subTitlePage4 text-center fs-4">${{autos.precio}}</p>
-
+                            
                             <div class="d-flex" style="justify-content: space-around;">
                                 <a href="{% url 'autos' %}" class="btn btn-warning">Volver</a>
 
