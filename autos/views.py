@@ -5,6 +5,7 @@ from .forms import CustomUserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
+
 # Create your views here.
 
 def autos(request):
@@ -39,3 +40,11 @@ def register(request):
             messages.error(request, "Formulario inválido. Por favor, corrige los errores.")
 
     return render(request, 'registration/register.html', data)
+
+def descripcion (request, id_auto):
+    autos = Autos.objects.all(id=id_auto)
+    return render(request, 'descripciones/descripcion.html', {
+
+        "autos":autos
+
+    })

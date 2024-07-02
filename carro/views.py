@@ -9,13 +9,13 @@ def agregar_autos(request, id_autos):
 
     #Con esto obtenemos ya el producto que queremos 
     #agregar al carro
-    Autos=Autos.objects.get(id=id_autos)
-    imagen_url = Autos.imagen.url
+    autos=Autos.objects.get(id=id_autos)
+    imagen_url = autos.imagen.url
 
     print(carro)
 
     #Ahora hay que agregar este producto al carro
-    carro.agregar(autos=Autos)
+    carro.agregar(autos=autos)
 
     return redirect("autos")
 

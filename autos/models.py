@@ -18,6 +18,3 @@ class Autos(models.Model):
     def __str__(self):
         return str(self.marca) + " " + str(self.modelo) + " " + str(self.anio)
     
-    
-    #dejar las tablas debiles enlazadas con las fuertes
-    #django sqlite3
