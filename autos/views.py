@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Autos
 from django.contrib.auth.decorators import login_required
 from .forms import CustomUserCreationForm
@@ -42,9 +42,9 @@ def register(request):
     return render(request, 'registration/register.html', data)
 
 def descripcion (request, id_auto):
-    autos = Autos.objects.all(id=id_auto)
+    auto = get_object_or_404(Autos,pk=id_auto)
     return render(request, 'descripciones/descripcion.html', {
 
-        "autos":autos
+        "autos":auto
 
     })

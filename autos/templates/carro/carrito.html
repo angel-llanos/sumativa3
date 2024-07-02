@@ -1,3 +1,4 @@
+
 <table class="table table-dark" style="color:white;">
     <thead>
         <tr>
@@ -15,7 +16,9 @@
         {% if request.session.carro.items %}
             {% for key, value in request.session.carro.items %}
                 <tr class="text-center">
-                    <td>{{value.marca}}</td>
+                    <td>
+                        <img src="{{value.imagen}}" alt="" style="width: 80px">
+                    </td>
                     <td>{{value.cantidad}}</td>
                     <td>
                         <a 
@@ -50,7 +53,7 @@
         {% if request.session.carro.items %}
             <tr class="m-auto">
                 <td>
-                    <a href="..." class="btn btn-success pl-5 pr-5 text-center">Pagar</button>
+                    <a href="{% url 'carro:limpiar' %}" class="btn btn-success pl-5 pr-5 text-center">Pagar</button>
                 </td>
             </tr>
         {% endif %}
